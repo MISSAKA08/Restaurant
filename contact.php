@@ -4,14 +4,15 @@ include("connection/connect.php");
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $message = $_POST['message'];
 
     // Basic validation
-    if ($name == "" || $email == "" || $message == "") {
+    if ($name == "" || $email == "" || $phone == "" || $message == "") {
         echo "<script>alert('All fields are required.');</script>";
     } else {
         // Save contact message in the database
-        $sql = "INSERT INTO contact_messages(name, email, message) VALUES('$name', '$email', '$message')";
+        $sql = "INSERT INTO contact_messages(name, email, phone, message) VALUES('$name', '$email', '$phone', '$message')";
         mysqli_query($db, $sql);
         echo "<script>alert('Your message has been sent!');</script>";
     }
@@ -78,6 +79,10 @@ if (isset($_POST['submit'])) {
                                             <div class="form-group col-sm-12">
                                                 <label for="email">Your Email</label>
                                                 <input class="form-control" type="email" name="email" id="email" required>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="phone">Your Phone</label>
+                                                <input class="form-control" type="text" name="phone" id="phone" required>
                                             </div>
                                             <div class="form-group col-sm-12">
                                                 <label for="message">Your Message</label>
