@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RESTAURANT MANAGEMENT SYSTEM
 
 ## About the Project
@@ -67,3 +68,7 @@ Software : XAMPP
 ## Demo
 
 Try the application: https://restaurantshub.000webhostapp.com/
+=======
+# Restaurant
+IAWD mini project
+>>>>>>> 2a0a076d106c329714442753c1859a3933b92591
