@@ -13,12 +13,17 @@ if (isset($_POST['submit'])) {
     } else {
         // Save contact message in the database
         $mql = "INSERT INTO contact_messages(name, email, phone, message) VALUES('$name', '$email', '$phone', '$message')";
-        mysqli_query($db, $mql);
-        echo "<script>alert('Your message has been sent!');</script>";
+        if (mysqli_query($db, $mql)) {
+            echo "<script>alert('Your message has been sent!');</script>";
+            
+            // Redirect after form submission to avoid resubmission on page refresh
+            echo "<script>window.location = 'contact.php';</script>";
+        } else {
+            echo "<script>alert('Error: Unable to send your message. Please try again later.');</script>";
+        }
     }
 }
 ?>
-
 
 <head>
     <meta charset="UTF-8">
@@ -67,7 +72,7 @@ if (isset($_POST['submit'])) {
                         <div class="col-md-8">
                             <div class="classic-contact-box">
                                 <!-- Contact Form -->
-                                <form id="contactForm" method="post">
+                                <form id="contactForm" method="post" onsubmit="return validateForm()">
                                     <h2 class="form-title">Contact Us</h2>
                                     <div class="form-group">
                                         <label for="name">Your Name</label>
@@ -105,9 +110,40 @@ if (isset($_POST['submit'])) {
         </footer>
     </div>
 
+    <!-- JavaScript Validation -->
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
+
+            // Check for empty fields
+            if (name === "" || email === "" || phone === "" || message === "") {
+                alert("All fields must be filled out!");
+                return false;
+            }
+
+            // Check if email is valid
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Check if phone number is valid (10 digits)
+            var phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
