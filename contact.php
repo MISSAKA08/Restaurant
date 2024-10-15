@@ -12,8 +12,8 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('All fields are required.');</script>";
     } else {
         // Save contact message in the database
-        $sql = "INSERT INTO contact_messages(name, email, phone, message) VALUES('$name', '$email', '$phone', '$message')";
-        mysqli_query($db, $sql);
+        $mql = "INSERT INTO contact_messages(name, email, phone, message) VALUES('$name', '$email', '$phone', '$message')";
+        mysqli_query($db, $mql);
         echo "<script>alert('Your message has been sent!');</script>";
     }
 }
@@ -27,12 +27,12 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Contact Us</title>
 
-    <!-- CSS links -->
+    <!-- Original CSS for the main design -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animsition.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- CSS for the classic contact box -->
+    <link href="css/contact.css" rel="stylesheet">
 </head>
 
 <body>
@@ -67,37 +67,32 @@ if (isset($_POST['submit'])) {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="widget">
-                                <div class="widget-body">
-                                    <!-- Contact Form -->
-                                    <form id="contactForm" method="post">
-                                        <div class="row">
-                                            <div class="form-group col-sm-12">
-                                                <label for="name">Your Name</label>
-                                                <input class="form-control" type="text" name="name" id="name" required>
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label for="email">Your Email</label>
-                                                <input class="form-control" type="email" name="email" id="email" required>
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label for="phone">Your Phone</label>
-                                                <input class="form-control" type="text" name="phone" id="phone" required>
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label for="message">Your Message</label>
-                                                <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
-                                            </div>
-                                        </div>
+                            <div class="classic-contact-box">
+                                <!-- Contact Form -->
+                                <form id="contactForm" method="post">
+                                    <h2 class="form-title">Contact Us</h2>
+                                    <div class="form-group">
+                                        <label for="name">Your Name</label>
+                                        <input class="form-control" type="text" name="name" id="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Your Email</label>
+                                        <input class="form-control" type="email" name="email" id="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Your Phone</label>
+                                        <input class="form-control" type="text" name="phone" id="phone" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Your Message</label>
+                                        <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
+                                    </div>
 
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <input type="submit" value="Send Message" name="submit" class="btn theme-btn">
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <!-- End Contact Form -->
-                                </div>
+                                    <div class="submit-btn-wrapper">
+                                        <input type="submit" value="Send Message" name="submit" class="btn btn-primary">
+                                    </div>
+                                </form>
+                                <!-- End Contact Form -->
                             </div>
                         </div>
                     </div>
@@ -107,14 +102,14 @@ if (isset($_POST['submit'])) {
 
         <footer class="footer">
             <div class="container">
-                <p class="text-muted">© 2024 Your Website. All rights reserved.</p>
+                <p class="footer-text">© 2024 Classic Brand. All rights reserved.</p>
             </div>
         </footer>
-
-        <!-- Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
