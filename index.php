@@ -17,9 +17,7 @@ session_start();
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet"> 
-    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" >
-    <link rel="stylesheet" href="node_modules/animate.css/animate.css" >
-    <link rel="stylesheet" href="node_modules/animate.css/animate.compat.css">
+ 
 </head>
 
 <body class="home">
