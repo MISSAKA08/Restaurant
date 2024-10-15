@@ -50,6 +50,8 @@ if (isset($_POST['submit'])) {
                         <ul class="nav navbar-nav">
                             <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
                             <li class="nav-item"><a class="nav-link active" href="restaurants.php">Restaurants</a></li>
+                            <li class="nav-item"> <a class="nav-link active" href="contact.php">Contact Us <span class="sr-only"></span></a></li>
+
                             <?php
                             if (empty($_SESSION["user_id"])) {
                                 echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a></li>';
