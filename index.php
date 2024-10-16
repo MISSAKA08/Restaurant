@@ -48,6 +48,71 @@ session_start();
             text-align: center;
             margin-top: 10px;
         }
+
+        .how-it-works {
+        padding: 60px 0;
+        background: #f8f8f8;
+    }
+
+    .how-it-works h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+
+    .how-it-works-solution {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .how-it-works-steps {
+        text-align: center;
+        opacity: 0; /* Initially hidden */
+        transform: translateY(20px); /* Move down slightly */
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        animation: fadeInUp 0.5s forwards; /* Animation applied */
+    }
+
+    .how-it-works-steps.visible {
+        opacity: 1; /* Become visible */
+        transform: translateY(0); /* Move to original position */
+    }
+
+    .icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        animation: rotate 1s ease-in-out infinite; /* Rotate animation */
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(50deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .pay-info {
+        font-size: 1.5em;
+        margin-top: 20px;
+        color: #333;
+    }
     </style>
  </head>
 
