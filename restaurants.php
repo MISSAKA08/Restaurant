@@ -44,7 +44,7 @@ session_start();
         }
 
         .entry-dscr {
-            padding: 15px; /* Padding around the description */
+            padding: 15px; /* Padding around the descriptions */
         }
 
         .entry-dscr h5 {
