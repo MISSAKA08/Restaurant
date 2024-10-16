@@ -69,12 +69,7 @@ session_start();
 
         ?>
 
-        
-							 
-            
-
-        
-
+    
         <section class="hero bg-image" data-image-src="images/img/main.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
