@@ -55,17 +55,17 @@ session_start();
 
     <link href="css/style.css" rel="stylesheet">
 
+    <body class="home">
+    
+    <?php 
 
+        include('header.php'); 
+
+    ?>
  
     </head>
 
-        <body class="home">
-    
-        <?php 
-
-            include('header.php'); 
-
-        ?>
+       
 
     
         <section class="hero bg-image" data-image-src="images/img/main.jpg">
