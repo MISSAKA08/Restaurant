@@ -20,7 +20,9 @@ session_start();
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet"> </head>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <style>
+    <link href="css/style.css" rel="stylesheet">
+   
+   <style>
         /* Optional custom styling */
         .swiper-container {
             width: 100%;
@@ -47,14 +49,12 @@ session_start();
             margin-top: 10px;
         }
     </style>
-
+ </head>
 
 <body class="home">
-        <header>
+        
+<header>
            
-
-    <link href="css/style.css" rel="stylesheet">
-
     <body class="home">
     
     <?php 
@@ -63,11 +63,8 @@ session_start();
 
     ?>
  
-    </head>
-
+    </header>
        
-
-    
         <section class="hero bg-image" data-image-src="images/img/main.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
