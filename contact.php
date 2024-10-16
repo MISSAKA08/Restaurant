@@ -25,6 +25,8 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,35 +38,23 @@ if (isset($_POST['submit'])) {
 
     <!-- CSS for the classic contact box -->
     <link href="css/contact.css" rel="stylesheet">
+
+    <style>
+        .background-image {
+            background-image: url('images/img/background_login.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <div style="background-image: url('images/img/background_login.jpg');">
-        <header id="header" class="header-scroll top-header headrom">
-            <nav class="navbar navbar-dark">
-                <div class="container">
-                    <a class="navbar-brand" href="index.php">
-                        <img class="img-rounded" src="images/food-mania-logo.png" alt="">
-                    </a>
-                    <div class="collapse navbar-toggleable-md float-lg-right" id="mainNavbarCollapse">
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="restaurants.php">Restaurants</a></li>
-                            <li class="nav-item"> <a class="nav-link active" href="contact.php">Contact Us <span class="sr-only"></span></a></li>
-
-                            <?php
-                            if (empty($_SESSION["user_id"])) {
-                                echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a></li>';
-                                echo '<li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a></li>';
-                            } else {
-                                echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Your Orders</a></li>';
-                                echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+    <div class="background-image">
+        <header>
+            <?php include('header.php'); ?>
         </header>
 
         <div class="page-wrapper">
@@ -147,5 +137,13 @@ if (isset($_POST['submit'])) {
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/animsition.min.js"></script>
+    <script src="js/bootstrap-slider.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/headroom.js"></script>
+    <script src="js/foodpicky.min.js"></script>
 </body>
 </html>
