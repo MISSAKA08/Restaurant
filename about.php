@@ -7,6 +7,7 @@
     <style>
         /* General Section Styles */
         .section {
+            margin-top: auto;
             padding: 60px 20px;
         }
         
@@ -119,10 +120,11 @@
             <div id="about-img">
                 <img width="70%" height="auto" src="images/about.jpg" alt="About Us Image 1">
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            <p>Welcome to YummyPicks, your go-to food delivery platform designed to bring delicious meals right to your doorstep.
+             We believe that good food should be convenient, accessible, and enjoyable for everyone. Whether you’re craving comfort food, looking to explore new cuisines, or just need a quick meal, YummyPicks has got you covered.
+             At YummyPicks, we partner with a wide variety of local restaurants to offer a diverse menu that suits every taste. Our user-friendly platform makes it easy to browse through options, select your favorite dishes, and track your order in real-time.
+              We’re committed to delivering not just food, but a seamless and satisfying experience from start to finish.
+            Join us on a journey of culinary exploration, and let YummyPicks bring the best of your neighborhood’s flavors straight to you!
             </p>
         </div>
         <div class="icon-boxes">
