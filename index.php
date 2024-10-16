@@ -53,6 +53,22 @@ session_start();
         <header>
             <?php include('header.php'); ?>
         </header>
+=======
+
+    <link href="css/style.css" rel="stylesheet">
+
+
+ 
+    </head>
+
+        <body class="home">
+    
+        <?php 
+
+            include('header.php'); 
+
+        ?>
+
         
 							 
             
