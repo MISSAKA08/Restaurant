@@ -13,7 +13,7 @@
             background-color: #343a40; /* Dark background */
         }
         .navbar-brand img {
-            width: 150px; /* Logo size */
+            width: 150px; /* Logo size hhhhh */
         }
         .navbar-nav .nav-link {
             color: #f8f9fa !important;
