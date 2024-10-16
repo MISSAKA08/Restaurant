@@ -1,10 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <?php
 include("connection/connect.php"); 
 error_reporting(0);
 session_start();
-
 include_once 'product-action.php'; 
 ?>
 
@@ -41,6 +40,9 @@ include_once 'product-action.php';
             padding: 15px; /* Padding inside food items */
             margin-bottom: 15px; /* Space between food items */
             transition: transform 0.2s; /* Smooth scaling effect */
+            display: flex; /* Flexbox for layout */
+            align-items: center; /* Center content vertically */
+            justify-content: space-between; /* Space out content */
         }
         .food-item:hover {
             transform: scale(1.02); /* Scale up on hover */
@@ -54,16 +56,21 @@ include_once 'product-action.php';
             text-decoration: underline; /* Underline on hover */
         }
         .btn.theme-btn {
-            background-color: #28a745; /* Green button */
+            background-color: orange; /* Orange button */
             color: white; /* White text */
         }
         .btn.theme-btn:hover {
-            background-color: #218838; /* Darker green on hover */
+            background-color: darkorange; /* Darker orange on hover */
         }
         .widget-heading h3 {
             border-bottom: 2px solid #007bff; /* Blue underline */
             padding-bottom: 10px; /* Space below the title */
             color: #343a40; /* Darker text color */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px; /* Space between grid items */
         }
     </style>
 </head>
@@ -83,10 +90,12 @@ include_once 'product-action.php';
                 </ul>
             </div>
         </div>
+        
         <?php 
-        $ress= mysqli_query($db,"select * from restaurant where rs_id='$_GET[res_id]'");
-        $rows=mysqli_fetch_array($ress);
+        $ress = mysqli_query($db,"SELECT * FROM restaurant WHERE rs_id='$_GET[res_id]'");
+        $rows = mysqli_fetch_array($ress);
         ?>
+        
         <section class="inner-page-hero bg-image" data-image-src="images/img/dish.jpeg">
             <div class="profile">
                 <div class="container">
@@ -106,9 +115,11 @@ include_once 'product-action.php';
                 </div>
             </div>
         </section>
+        
         <div class="breadcrumb">
             <div class="container"></div>
         </div>
+        
         <div class="container m-t-30">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
@@ -148,11 +159,11 @@ include_once 'product-action.php';
                                 <?php
                                 if($item_total==0){
                                 ?>
-                                <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg disabled">Checkout</a>
+                                <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check" class="btn theme-btn btn-lg disabled">Checkout</a>
                                 <?php
                                 } else {   
                                 ?>
-                                <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg active">Checkout</a>
+                                <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check" class="btn theme-btn btn-lg active">Checkout</a>
                                 <?php   
                                 }
                                 ?>
@@ -172,16 +183,15 @@ include_once 'product-action.php';
                             <div class="clearfix"></div>
                         </div>
                         <div class="collapse in" id="popular2">
-                        <?php  
-                            $stmt = $db->prepare("select * from dishes where rs_id='$_GET[res_id]'");
-                            $stmt->execute();
-                            $products = $stmt->get_result();
-                            if (!empty($products)) {
-                                foreach($products as $product) {
-                        ?>
-                                <div class="food-item">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-lg-8">
+                            <div class="grid-container">
+                                <?php  
+                                    $stmt = $db->prepare("SELECT * FROM dishes WHERE rs_id='$_GET[res_id]'");
+                                    $stmt->execute();
+                                    $products = $stmt->get_result();
+                                    if (!empty($products)) {
+                                        foreach($products as $product) {
+                                ?>
+                                    <div class="food-item">
                                         <form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id'];?>&action=add&id=<?php echo $product['d_id']; ?>'>
                                             <div class="rest-logo pull-left">
                                                 <a class="restaurant-logo pull-left" href="#"><?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?></a>
@@ -189,31 +199,33 @@ include_once 'product-action.php';
                                             <div class="rest-descr">
                                                 <h6><a href="#"><?php echo $product['title']; ?></a></h6>
                                                 <p><?php echo $product['description']; ?></p>
-                                                <h6>Price: ₹<?php echo $product['price']; ?></h6>
-                                            </div>
-                                            <div class="text-xs-right">
-                                                <input type="number" name="quantity" value="1" min="1" style="width: 60px; display: inline-block; margin-top: 10px;" />
-                                                <button type="submit" class="btn theme-btn">Add to cart</button>
+                                                <p><strong>Price: </strong>₹<?php echo $product['price']; ?></p>
+                                                <input type="hidden" name="quantity" value="1" />
+                                                <button type="submit" class="btn theme-btn">Add to Cart</button>
                                             </div>
                                         </form>
-                                        </div>
                                     </div>
-                                </div>
-                        <?php
-                                }
-                            } else {
-                                echo "<h5>No Dishes Found</h5>";
-                            }
-                        ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                <?php 
+                                        } // End of foreach
+                                    } else {
+                                        echo "<p>No dishes available.</p>";
+                                    }
+                                ?>
+                            </div> <!-- End of grid-container -->
+                        </div> <!-- End of collapse -->
+                    </div> <!-- End of menu-widget -->
+                </div> <!-- End of main content area -->
+            </div> <!-- End of row -->
+        </div> <!-- End of container -->
 
         <footer>
             <?php include('footer.php'); ?>
         </footer>
-    </div>
+    </div> <!-- End of page-wrapper -->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/animsition.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
