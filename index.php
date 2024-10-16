@@ -56,9 +56,7 @@ session_start();
 
 
     <link href="css/style.css" rel="stylesheet">
-gg
- 
-    </head>
+ </head>
 
         <body class="home">
     
