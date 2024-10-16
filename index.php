@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
 include("connection/connect.php");  
 error_reporting(0);  
@@ -15,47 +17,47 @@ session_start();
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"> </head>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* Optional custom styling */
+        .swiper-container {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        .swiper-slide {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .food-item-wrap {
+            width: 100%;
+            max-width: 300px;
+        }
+        .figure-wrap img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .content {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 
-    <link href="css/style.css" rel="stylesheet">
 
-
-    <link href="css/style.css" rel="stylesheet">
-
-
- 
-    </head>
-
-        <body class="home">
-    
-        <?php 
-
-            include('header.php'); 
-
-        ?>
-        
-							<?php
-						if(empty($_SESSION["user_id"])) // if user is not login
-							{
-								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
-							}
-						else
-							{
-
-									
-									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Your Orders</a> </li>';
-									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
-							}
-
-						?>
-							 
-                        </ul>
-						 
-                    </div>
-                </div>
-            </nav>
-
+<body class="home">
+        <header>
+            <?php include('header.php'); ?>
         </header>
+        
+							 
+            
+
+        
 
         <section class="hero bg-image" data-image-src="images/img/main.jpg">
             <div class="hero-inner">
@@ -101,33 +103,41 @@ session_start();
 	
      
         <section class="popular">
-            <div class="container">
-                <div class="title text-xs-center m-b-30">
-                    <h2>Popular Dishes of the Month</h2>
-                    <p class="lead">The easiest way to your favourite food</p>
-                </div>
-                <div class="row">
-						<?php 					
-						$query_res= mysqli_query($db,"select * from dishes LIMIT 3"); 
-                                while($r=mysqli_fetch_array($query_res))
-                                {
-                                        
-                                    echo '  <div class="col-xs-12 col-sm-6 col-md-4 food-item">
-                                            <div class="food-item-wrap">
-                                                <div class="figure-wrap bg-image" data-image-src="admin/Res_img/dishes/'.$r['img'].'"></div>
-                                                <div class="content">
-                                                    <h5><a href="dishes.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
-                                                    <div class="product-name">'.$r['slogan'].'</div>
-                                                    <div class="price-btn-block"> <span class="price">₹'.$r['price'].'</span> <a href="dishes.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Order Now</a> </div>
-                                                </div>
-                                                
-                                            </div>
-                                    </div>';                                      
-                                }	
-						?>
-                </div>
+    <div class="container">
+        <div class="title text-xs-center m-b-30">
+            <h2>Popular Dishes of the Month</h2>
+            <p class="lead">The easiest way to your favourite food</p>
+        </div>
+        <!-- Swiper Container -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <?php
+                $query_res = mysqli_query($db, "SELECT * FROM dishes LIMIT 6"); 
+                while ($r = mysqli_fetch_array($query_res)) {
+                    echo '<div class="swiper-slide">
+                            <div class="food-item-wrap">
+                                <div class="figure-wrap">
+                                    <img src="admin/Res_img/dishes/'.$r['img'].'" alt="Dish Image" />
+                                </div>
+                                <div class="content">
+                                    <h5><a href="dishes.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
+                                    <div class="product-name">'.$r['slogan'].'</div>
+                                    <div class="price-btn-block"> 
+                                        <span class="price">₹'.$r['price'].'</span> 
+                                        <a href="dishes.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Order Now</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                }
+                ?>
             </div>
-        </section>
+            <!-- Add Pagination and Navigation -->
+            <div class="swiper-pagination"></div>
+            
+        </div>
+    </div>
+</section>
  
         <section class="how-it-works">
             <div class="container">
@@ -237,10 +247,8 @@ session_start();
 													</div>';
 										  }
 						
-                                     
-				
-						?>
 						
+						?>
 							
 					
                     </div>
@@ -249,13 +257,16 @@ session_start();
                
             </div>
         </section>
-
         
+      
+        <footer>
         <?php
 
-             include 'footer.php';
+            include 'footer.php';
 
             ?>
+
+        </footer>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
@@ -265,6 +276,27 @@ session_start();
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
+    <!-- Include Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,  // Display 3 slides at a time
+        spaceBetween: 30, // Optional: space between slides in pixels
+        loop: true, // Optional: loop slides
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        // No autoplay for manual navigation
+        autoplay: true,
+    });
+</script>
 </body>
 
 </html>
