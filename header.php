@@ -13,7 +13,7 @@
         <div class="container">
             <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
             <a class="navbar-brand" href="index.php">
-                <img width="80%" height="auto"  class="img-rounded" src="images/YummyPicklogo2.png" alt="">
+                <img width="60%" height="60%"  class="img-rounded" src="images/YummyPicksLogo.png" alt="">
             </a>
             <div class="collapse navbar-toggleable-md float-lg-right" id="mainNavbarCollapse">
                 <ul class="nav navbar-nav">

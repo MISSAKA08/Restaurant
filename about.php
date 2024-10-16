@@ -170,7 +170,7 @@
     </div>
 </section>
 
-<?php include 'footer.php'; ?>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -193,6 +193,13 @@
         });
     });
 </script>
+<footer>
+        <?php
 
+            include 'footer.php';
+
+            ?>
+
+        </footer>
 </body>
 </html>
