@@ -1,3 +1,31 @@
+<?php
+include("connection/connect.php");
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+
+    // Basic validation
+    if ($name == "" || $email == "" || $phone == "" || $message == "") {
+        echo "<script>alert('All fields are required.');</script>";
+    } else {
+        // Save contact message in the database
+        $mql = "INSERT INTO contact_messages(name, email, phone, message) VALUES('$name', '$email', '$phone', '$message')";
+        if (mysqli_query($db, $mql)) {
+            echo "<script>alert('Your message has been sent!');</script>";
+            
+            // Redirect after form submission to avoid resubmission on page refresh
+            echo "<script>window.location = 'contact.php';</script>";
+        } else {
+            echo "<script>alert('Error: Unable to send your message. Please try again later.');</script>";
+        }
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
