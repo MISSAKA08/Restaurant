@@ -95,10 +95,13 @@ if (isset($_POST['submit'])) {
             </section>
         </div>
 
-        <footer class="footer">
-            <div class="container">
-                <p class="footer-text">© 2024 Classic Brand. All rights reserved.</p>
-            </div>
+        <footer>
+        <?php
+
+            include 'footer.php';
+
+            ?>
+
         </footer>
     </div>
 
