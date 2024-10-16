@@ -17,8 +17,8 @@ session_start();
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    
-    xlj
+
+
  
     </head>
 
