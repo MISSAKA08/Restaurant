@@ -16,11 +16,11 @@ session_start();
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"
-    ss
+    <link href="css/style.css" rel="stylesheet">
+    
 
  
-</head>
+    </head>
 
 <body class="home">
     
