@@ -51,9 +51,7 @@ session_start();
 
 <body class="home">
         <header>
-            <?php include('header.php'); ?>
-        </header>
-=======
+           
 
     <link href="css/style.css" rel="stylesheet">
 
@@ -69,12 +67,7 @@ session_start();
 
         ?>
 
-        
-							 
-            
-
-        
-
+    
         <section class="hero bg-image" data-image-src="images/img/main.jpg">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
