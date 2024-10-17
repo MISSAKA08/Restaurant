@@ -145,7 +145,7 @@ session_start();
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <p class="pay-info">Cash on Delivery</p>
+                        <p class="pay-info">Cash on Delivery Available</p>
                     </div>
                 </div>
             </div>
