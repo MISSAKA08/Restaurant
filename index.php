@@ -36,7 +36,7 @@ session_start();
                             <li class="nav-item"> <a class="nav-link active" href="contact.php">Contact Us <span class="sr-only"></span></a></li>
                            
 							<?php
-						if(empty($_SESSION["user_id"])) // if user is not login
+						if(empty($_SESSION["user_id"])) // if user is not log to the db
 							{
 								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
