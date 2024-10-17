@@ -12,11 +12,7 @@
 
       <link rel="stylesheet" href="css/login.css">
 
-	  <style 
-    
-
-    
-    type="text/css">
+	  <style type="text/css">
 	  #buttn{
 		  color:#fff;
 		  background-color: #ff3300;
