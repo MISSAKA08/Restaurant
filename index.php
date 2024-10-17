@@ -27,7 +27,7 @@ session_start();
         <?php include('header.php'); ?>
     </header>
 
-        <section class="hero bg-image" data-image-src="images/img/main.jpg">
+        <section class="hero bg-image" data-image-src="images/img/main.JPG">
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
                     <h1>Order Delivery & Take-Out </h1>
