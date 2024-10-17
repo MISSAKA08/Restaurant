@@ -22,7 +22,7 @@
         }
         /* Active Tab Highlighting */
         .active-tab {
-            background-color: #007bff; /* Blue active tab */
+            background-color: #FFA500; /* Blue active tab */
             color: #fff !important;
             border-radius: 5px;
         }
