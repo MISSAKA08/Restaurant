@@ -107,21 +107,6 @@ session_start();
             transform: scale(1.05);
         }
 
-        footer {
-            background: #007bff;
-            color: white;
-            padding: 30px 0;
-        }
-
-        footer h5 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
         .payment-options img {
             width: 40px;
             margin: 0 10px;
@@ -183,32 +168,10 @@ session_start();
             </div>
         </section>
 
-        <footer class="footer">
-            <div class="container">
-                <div class="bottom-footer">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-3 payment-options">
-                            <h5>Payment Options</h5>
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a href="#"><img src="images/paypal.png" alt="Paypal"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="images/mastercard.png" alt="Mastercard"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="images/maestro.png" alt="Maestro"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="images/stripe.png" alt="Stripe"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="images/bitcoin.png" alt="Bitcoin"></a></li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-4 address">
-                            <h5>Address</h5>
-                            <p>213, Raheja Chambers, Free Press Journal Road, Nariman Point, Mumbai, Maharashtra 400021, India</p>
-                            <h5>Phone: <a href="tel:+918093424562">+91 80934 24562</a></h5>
-                        </div>
-                        <div class="col-xs-12 col-sm-5 additional-info">
-                            <h5>Additional Information</h5>
-                            <p>Join thousands of other restaurants who benefit from partnering with us.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <footer >
+
+             <?php include('footer.php'); ?>
+           
         </footer>
 
         <script src="js/jquery.min.js"></script>
