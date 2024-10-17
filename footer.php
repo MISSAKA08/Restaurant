@@ -105,9 +105,9 @@
 
     <?php
     // Dynamic content for the footer using PHP
-    $phone = "+1 5589 55488 55";
-    $email = "info@example.com";
-    $address = "A108 Adam Street, New York, NY 535022";
+    $phone = "011-2744464";
+    $email = "yummypicks@gmail.com";
+    $address = "No.18, Alfred House Rd, Colombo 00300, Sri Lanka";
     ?>
 
     <div class="footer">
