@@ -22,7 +22,7 @@
         .why-us .why-box h3 {
             font-size: 28px;
             color: #333;
-            padding-top: 50px;
+            padding-top: 40px;
         }
         .why-us .why-box p {
             font-size: 18px;
