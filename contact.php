@@ -25,8 +25,10 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,71 +38,150 @@ if (isset($_POST['submit'])) {
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- CSS for the classic contact box -->
+    <!-- CSS for the contact box and new layout -->
     <link href="css/contact.css" rel="stylesheet">
 
     <style>
-        .background-image {
+      .background-image {
             background-image: url('images/img/background_login.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 100vh;
+            height: 150vh;
             width: 100%;
+        }
+        body {
+            background-color: #f8f9fa; /* Light background color */
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+        }
+
+        .contact-info .info-box {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px; /* Slightly increased border-radius for softer edges */
+            padding: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for more depth */
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px; /* Added margin for spacing */
+            flex: 1 1 200px; /* Flex property to allow responsive sizing */
+        }
+
+        .contact-info .info-box:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+
+        .contact-info .info-box i {
+            font-size: 40px;
+            color: #d9534f;
+            margin-bottom: 10px;
+        }
+
+        .contact-form-wrapper {
+            margin-top: 20px;
+            background-color: #fff; /* Background for the form wrapper */
+            border-radius: 10px; /* Softer edges */
+            padding: 20px; /* Padding around the form */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+
+        .contact-form-wrapper h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40; /* Darker color for better contrast */
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .submit-btn-wrapper {
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #d9534f; /* Custom primary button color */
+            border: none;
+            transition: background-color 0.3s; /* Transition for hover effect */
+        }
+
+        .btn-primary:hover {
+            background-color: #c9302c; /* Darker shade on hover */
         }
     </style>
 </head>
 
 <body>
-    <div class="background-image">
-        <header>
-            <?php include('header.php'); ?>
-        </header>
+<div class="background-image">
+    <header>
+        <?php include('header.php'); ?>
+    </header>
 
-        <div class="page-wrapper">
-            <section class="contact-page inner-page">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="classic-contact-box">
-                                <!-- Contact Form -->
-                                <form id="contactForm" method="post" onsubmit="return validateForm()">
-                                    <h2 class="form-title">Contact Us</h2>
-                                    <div class="form-group">
-                                        <label for="name">Your Name</label>
-                                        <input class="form-control" type="text" name="name" id="name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Your Email</label>
-                                        <input class="form-control" type="email" name="email" id="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone">Your Phone</label>
-                                        <input class="form-control" type="text" name="phone" id="phone" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message">Your Message</label>
-                                        <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
-                                    </div>
+    <div class="page-wrapper">
+        <section class="contact-page inner-page">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="info-box">
+                        <i class="fa fa-map-marker"></i>
+                        <h4>Address</h4>
+                        <p>A108 Adam Street, New York, NY 535022</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa fa-phone"></i>
+                        <h4>Call Us</h4>
+                        <p>+1 5589 55488 55</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa fa-envelope"></i>
+                        <h4>Email Us</h4>
+                        <p>info@example.com</p>
+                    </div>
+                </div>
 
-                                    <div class="submit-btn-wrapper">
-                                        <input type="submit" value="Send Message" name="submit" class="btn btn-primary">
-                                    </div>
-                                </form>
-                                <!-- End Contact Form -->
-                            </div>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="contact-form-wrapper">
+                            <!-- Contact Form -->
+                            <form id="contactForm" method="post" onsubmit="return validateForm()">
+                                <h2 class="form-title">Contact Us</h2>
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input class="form-control" type="email" name="email" id="email" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Your Phone</label>
+                                    <input class="form-control" type="tel" name="phone" id="phone" placeholder="Enter your phone number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea class="form-control" name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
+                                </div>
+
+                                <div class="submit-btn-wrapper">
+                                    <input type="submit" value="Send Message" name="submit" class="btn btn-primary">
+                                </div>
+                            </form>
+                            <!-- End Contact Form -->
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-
-        <footer class="footer">
-            <div class="container">
-                <p class="footer-text">© 2024 Classic Brand. All rights reserved.</p>
             </div>
-        </footer>
+        </section>
     </div>
+
+    <footer>
+        <?php include 'footer.php'; ?>
+    </footer>
 
     <!-- JavaScript Validation -->
     <script>
@@ -137,13 +218,6 @@ if (isset($_POST['submit'])) {
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/animsition.min.js"></script>
-    <script src="js/bootstrap-slider.min.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/headroom.js"></script>
-    <script src="js/foodpicky.min.js"></script>
 </body>
+
 </html>

@@ -1,98 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animsition.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Footer Example</title>
     <style>
-        .footer {
-            background-image: url('images/footer-background.jpg'); /* Change to your image path */
-            background-size: cover; /* Cover the entire footer area */
-            background-position: center; /* Center the image */
-            color: #f8f9fa; /* Text color */
-            padding: 20px 0; /* Padding for spacing */
-        }
-        .footer h5 {
-            color: #ffffff; /* Heading color */
-            font-size: 20px; /* Heading font size */
-            margin-bottom: 10px; /* Spacing below heading */
-        }
-        .footer .color-gray {
-            color: #d3d3d3; /* Lighter text color for other text */
-        }
-        .footer .payment-options ul {
+        * {
+            margin: 0;
             padding: 0;
-            list-style: none; /* Remove bullet points */
-            display: flex; /* Flexbox for payment options */
-            justify-content: center; /* Center items */
-            flex-wrap: wrap; /* Allow wrapping on small screens */
-            margin: 10px 0; /* Spacing above and below */
+            box-sizing: border-box;
         }
-        .footer .payment-options li {
-            margin: 0 10px; /* Spacing between payment icons */
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
         }
-        .footer .payment-options img {
-            width: 50px; /* Fixed width for payment icons */
-            height: auto; /* Auto height for aspect ratio */
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 40px;
+            background-color: #2c3e50;
+            color: #fff;
+            border-top: 5px solid #f39c12;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .footer p {
-            font-size: 14px; /* Font size for paragraphs */
-            margin: 0 0 10px; /* Spacing below paragraphs */
+
+        .footer-section {
+            width: 22%;
+            text-align: left;
         }
-        .footer .address, .footer .additional-info {
-            margin-top: 20px; /* Margin above address and info sections */
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #f39c12;
         }
-        .footer .bottom-footer {
-            border-top: 1px solid #adb5bd; /* Top border for separation */
-            padding-top: 20px; /* Padding above */
-            margin-top: 30px; /* Margin above */
+
+        .footer-section p, .footer-section a {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ddd;
+            transition: color 0.3s ease;
         }
-        @media (max-width: 576px) {
-            .footer h5 {
-                font-size: 18px; /* Reduce font size on small screens */
-            }
-            .footer .payment-options img {
-                width: 40px; /* Smaller icons on small screens */
-            }
+
+        .footer-section a:hover {
+            color: #f39c12;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            background-color: #1a252f;
+            padding: 15px 0;
+            color: #bbb;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 8px;
+            font-size: 25px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: #f39c12;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #f39c12;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #e67e22;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .footer-section p {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
-
 <body>
-    <footer class="footer">
-        <div class="container">
-            <div class="bottom-footer text-center"> <!-- Center content -->
-                <div class="row">
-                    <div class="col-xs-12 col-sm-3 payment-options">
-                        <h5>Payment Options</h5>
-                        <ul>
-                            <li><a href="#"><img src="images/paypal.png" alt="Paypal"></a></li>
-                            <li><a href="#"><img src="images/mastercard.png" alt="Mastercard"></a></li>
-                            <li><a href="#"><img src="images/maestro.png" alt="Maestro"></a></li>
-                            <li><a href="#"><img src="images/stripe.png" alt="Stripe"></a></li>
-                            <li><a href="#"><img src="images/bitcoin.png" alt="Bitcoin"></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 address">
-                        <h5>Address</h5>
-                        <p>213, Raheja Chambers, Free Press Journal Road, Nariman Point, Mumbai, Maharashtra 400021, India</p>
-                        <p><strong>Phone:</strong> +91 8093424562</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-5 additional-info">
-                        <h5>Additional Information</h5>
-                        <p>Join thousands of other restaurants who benefit from having partnered with us.</p>
-                    </div>
-                </div>
+
+    <?php
+    // Dynamic content for the footer using PHP
+    $phone = "011-2744464";
+    $email = "yummypicks@gmail.com";
+    $address = "No.18, Alfred House Rd, Colombo 00300, Sri Lanka";
+    ?>
+
+    <div class="footer">
+        <div class="footer-section">
+            <h3>Address</h3>
+            <p><?php echo $address; ?></p>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Phone: <?php echo $phone; ?></p>
+            <p>Email: <?php echo $email; ?></p>
+        </div>
+        <div class="footer-section">
+            <h3>Opening Hours</h3>
+            <p>Mon-Sat: 11AM - 23PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/animsition.min.js"></script>
-    <script src="js/bootstrap-slider.min.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/headroom.js"></script>
-    <script src="js/foodpicky.min.js"></script>
+    <div class="footer-bottom">
+        <p>© 2024 Yummy. All Rights Reserved. Designed by BootstrapMade</p>
+    </div>
+
+    <a href="#" class="back-to-top" onclick="scrollToTop()">&#8679;</a>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Include Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
+</html>
