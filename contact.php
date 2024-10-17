@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 150vh;
+            height: 120vh;
             width: 100%;
         }
         body {
